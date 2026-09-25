@@ -12,7 +12,7 @@ function Home() {
     setMousePos({ x, y });
   };
 
-  const imageSrc = "/src/assets/img.jpg";
+  const imageSrc = "/src/assets/img.png";
 
   return (
     <section className="min-h-[calc(100vh-4rem)] flex items-center justify-center ">
@@ -88,7 +88,7 @@ function Home() {
                 src={imageSrc} 
                 alt="Portrait YBVLAD Couleur"
                 aria-hidden="true"
-                className="absolute inset-0 w-full h-full object-cover pointer-events-none transition-[clip-path] duration-700 ease-out"
+                className="absolute inset-0 w-full h-full object-cover pointer-events-none transition-[clip-path] duration-1000 ease-out"
                 style={{
                   clipPath: isHovered 
                     ? `circle(150% at ${mousePos.x}% ${mousePos.y}%)` 

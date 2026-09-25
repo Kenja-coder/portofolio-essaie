@@ -1,7 +1,12 @@
 import { useState } from "react";
 import { Container, Menu, X } from "lucide-react";
+import { Sun, Moon } from "lucide-react";
 
-function Navbar() {
+interface navprops{
+  theme:string,
+  toggleTheme:()=>void
+}
+function Navbar({ theme, toggleTheme }: navprops) {
   // État pour ouvrir/fermer le menu mobile
   const [isOpen, setIsOpen] = useState(false);
 
@@ -38,6 +43,20 @@ function Navbar() {
       >
         {isOpen ? <X /> : <Menu />}
       </button>
+      {/* Action & Toggle Dark Mode */}
+        <div className="flex items-center gap-4">
+          <button
+            onClick={toggleTheme}
+            aria-label="Changer de thème"
+            className="btn btn-ghost btn-circle text-base-content hover:bg-base-content/10 transition-all"
+          >
+            {theme === "dark" ? (
+              <Sun className="w-5 h-5 text-amber-400" />
+            ) : (
+              <Moon className="w-5 h-5 text-slate-700" />
+            )}
+          </button>
+        </div>
     </header>
   );
 }
