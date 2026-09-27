@@ -49,33 +49,6 @@ const projects: Project[] = [
     githubUrl: "https://github.com/votre-user/chronoquest",
     demoUrl: "https://chronoquest.demo.com",
   },
-  {
-    id: 5,
-    title: "Dashboard Analytics",
-    description: "Interface d'analyse de données en temps réel avec graphiques interactifs.",
-    img: "src/assets/projects/5.png",
-    tags: ["React", "TypeScript", "Tailwind CSS"],
-    githubUrl: "https://github.com/votre-user/dashboard",
-    demoUrl: "https://dashboard.demo.com",
-  },
-  {
-    id: 6,
-    title: "Dashboard Analytics",
-    description: "Interface d'analyse de données en temps réel avec graphiques interactifs.",
-    img: "src/assets/projects/6.png",
-    tags: ["React", "TypeScript", "Tailwind CSS"],
-    githubUrl: "https://github.com/votre-user/dashboard",
-    demoUrl: "https://dashboard.demo.com",
-  },
-  {
-    id: 7,
-    title: "Dashboard Analytics",
-    description: "Interface d'analyse de données en temps réel avec graphiques interactifs.",
-    img: "src/assets/projects/7.png",
-    tags: ["React", "TypeScript", "Tailwind CSS"],
-    githubUrl: "https://github.com/votre-user/dashboard",
-    demoUrl: "https://dashboard.demo.com",
-  },
 ];
 
 type Rect = { left: number; top: number; width: number; height: number };
@@ -151,14 +124,15 @@ export default function Projet() {
   return (
     <section className="isolate relative py-8 md:py-16 max-w-7xl mx-auto px-3 sm:px-6 md:px-8">
       {/* SVG d'arrière-plan - Isolé au fond avec -z-10 */}
-      <svg 
-        viewBox="0 0 450 250" 
+      <svg
+        viewBox="0 0 450 250"
         preserveAspectRatio="none"
         className="absolute inset-0 w-full h-full -z-10 pointer-events-none p-1 sm:p-2"
-      > 
-        <motion.rect 
+        >
+        <motion.rect
           className="stroke-accent stroke-[3] sm:stroke-[4] md:stroke-[5] [stroke-dasharray:5,4] [stroke-linecap:round]"
-          animate={{ strokeDashoffset: [0, -20] }}
+          // -36 est un multiple parfait de (5 + 4 = 9), l'animation bouclera à l'infini sans à-coups
+          animate={{ strokeDashoffset: [0, -36] }}
           transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
           fill="none"
           x={2.5}
@@ -168,7 +142,8 @@ export default function Projet() {
           rx={20} 
           ry={20} 
         />
-      </svg>
+        </svg>
+
 
       <h2 className="relative z-10 text-2xl sm:text-3xl md:text-4xl font-bold mb-6 md:mb-12 text-center">
         Mes Projets
@@ -178,14 +153,14 @@ export default function Projet() {
         ref={containerRef}
         className="relative cursor-pointer overflow-visible z-10 p-17"
         animate={{
-          height: expanded ? gridHeight : singleCardHeight + (isTouchDevice ? 20 : 80),
+          height: expanded ? gridHeight : singleCardHeight + (isTouchDevice ? 20 : 120),
         }}
         transition={{ type: "spring", stiffness: 200, damping: 25 }}
         onMouseEnter={() => !isTouchDevice && setIsSectionHovered(true)}
         onMouseLeave={() => !isTouchDevice && setIsSectionHovered(false)}
       >
         {!isSectionHovered && !isTouchDevice && (
-          <DivMessage message="Une partie de mes projets, survolez pour découvrir" />
+          <DivMessage message="Une partie de mes projets,Je vous invite a découvrir" />
         )}
 
         {/* Grille invisible de référence responsive */}
