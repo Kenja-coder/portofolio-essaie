@@ -128,6 +128,7 @@ export default function Projet() {
 
   return (
     <section className="py-8 md:py-16 max-w-6xl mx-auto px-3 sm:px-4">
+        
       <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-12 text-center">Mes Projets</h2>
 
       <motion.div

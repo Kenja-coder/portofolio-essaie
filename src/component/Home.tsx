@@ -23,8 +23,8 @@ function Home() {
   const imageSrc = "/src/assets/img.png";
 
   return (
-    <section className="min-h-[calc(100vh-5rem)] flex items-center justify-center p-4">
-      <div className="relative w-full max-w-6xl flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12 p-6 md:p-10 rounded-3xl border-b-4 border-l-4 border-accent bg-base-100 overflow-hidden">
+    <section className="min-h-[calc(100vh-4rem)] flex items-center justify-center ">
+      <div className="w-full max-w-6xl flex flex-col-reverse md:flex-row items-center justify-between gap-12 lg:gap-16 p-5 rounded-md border-accent border-b-5 border-l-5">
         
         {/* Blocs de Texte (Arrière-plan sur Mobile, Côtés sur Desktop) */}
         

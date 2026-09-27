@@ -50,14 +50,14 @@ function Navbar({ theme, toggleTheme }: NavProps) {
           )}
         </button>
 
-        {/* Bouton Burger (Visible uniquement sur mobile) */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden btn btn-soft btn-accent btn-square"
-          aria-label="Toggle menu"
-        >
+      {/* Bouton Burger (Visible uniquement sur mobile) */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="md:hidden btn btn-soft btn-accent btn-square"
+        aria-label="Toggle menu"
+      >
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+      </button>
       </div>
     </header>
   );
