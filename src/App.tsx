@@ -2,11 +2,12 @@ import { useState, useEffect } from "react";
 import Home from "./component/Home";
 import Navbar from "./component/Navbar";
 import Skill from "./component/Skill";
+import Projet from "./component/Projet";
 
 function App() {
   // 1. Lit la session au démarrage. Si l'onglet vient d'être ouvert, renvoie null -> "dark" par défaut
   const [theme, setTheme] = useState(() => {
-    return sessionStorage.getItem("theme") || "dark";
+    return sessionStorage.getItem("theme") || "ligth";
   });
 
   // 2. Sauvegarde le thème uniquement pour la session en cours
@@ -24,7 +25,10 @@ function App() {
       <Navbar theme={theme} toggleTheme={toggleTheme} />
       <Home />
       <Skill />
+      <Projet/>
     </div>
+      
+    
   );
 }
 

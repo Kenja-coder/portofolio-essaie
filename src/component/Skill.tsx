@@ -1,12 +1,12 @@
-import { 
-  Code2, 
-  FileCode, 
-  Database, 
-  Layout, 
-  Palette, 
-  Terminal, 
-  Cpu, 
-  Boxes 
+import {
+  Code2,
+  FileCode,
+  Database,
+  Layout,
+  Palette,
+  Terminal,
+  Cpu,
+  Boxes
 } from "lucide-react";
 import {motion} from "framer-motion"
 
